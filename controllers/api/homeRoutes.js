@@ -42,13 +42,7 @@ try {
                 attributes: ['username'],
             },
         ],
-    }),
-
-    const post =postData.get({ plain: true });
-        console.log(post)
-        res.render('post', {
-            ...post,
-            });
+    });
 
 const post = postData.get({ plain: true });
 console.log(post)
