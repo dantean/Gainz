@@ -83,3 +83,18 @@ router.get('/profile', withAuth, async (req, res) => {
 
 
 //http://localhost:3001/login
+router.get('/login', (req, res) => {
+if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+}
+
+res.render('login');
+});
+
+//http://localhost:3001/page1
+router.get("/page1",async(req,res)=>{
+    res.render("page1")
+})
+
+module.exports = router;
