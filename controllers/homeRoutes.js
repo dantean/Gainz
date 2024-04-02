@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 //http://localhost:3001/
 router.get('/', async (req, res) => {
-    try {
+//    try {
         const postData = await Post.findAll({
             include: [
                 {
@@ -15,15 +15,15 @@ router.get('/', async (req, res) => {
             ],
         });
 
-        const posts = post.Data.map((post) => post.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts)
         res.render('homepage', {
         posts,
         logged_in: req.session.logged_in
         });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
 });
 
 
