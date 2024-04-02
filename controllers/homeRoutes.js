@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 //http://localhost:3001/
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll({
+        const post.Data = await Post.findAll({
             include: [
                 {
                     model: User,
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             ],
         });
 
-        const posts = post.Data.map((post) => post.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts)
         res.render('homepage', {
         posts,
