@@ -3,45 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get those gains!</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-<link rel="stylesheet" href="/css/style.css">
+    <title>Get those gainz!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="flex-column justify-space-around">
-        <header class="display-flex justify-space-between align-center p-2">
-        <h1>
-            <a href="/">Gainz!</a>
-        </h1>
-        <nav>
-            {{#if logged_in}}
-            <a href="/profile">profile</a>
-            <button class="no-button" id="logout">logout</button>
-            {{else}}
-            <a href="/login">login</a> |
-            {{/if}}
-        </nav>
-        </header>
-        <main class="container comtainer-fluid mt-5">
-            {{{body}}}
-        </main>
+    <section class="hero is-primary" style="background-color: transparent;">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    <a href="/"><img src="/assets/logo.png" alt="Gainz!"></a>
+                </h1>
+            </div>
+        </div>
+    </section>
 
-    </div>
-    
+    <section class="section">
+        <div class="container">
+            <nav class="level">
+                <div class="level-item">
+                    {{#if logged_in}}
+                    <a href="/profile" class="button is-primary">profile</a>
+                    <button class="button is-light" id="logout">logout</button>
+                    {{else}}
+                    <a href="/login" class="button is-primary">login</a>
+                    {{/if}}
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <main class="container mt-5">
+        {{{body}}}
+    </main>
+
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
 
     <script>
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        document.getElementById('search-btn').click();
-    }
-});
-</script>
+        document.getElementById('search-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('search-btn').click();
+            }
+        });
+    </script>
+    
+    <footer class="footer">
+        <div class="content has-text-centered">
+                <p>CREATED BY JOSEPH ILIYAS AND DEIVID</p>
+        </div>
+    </footer>
 </body>
-<footer>
-<p>CREATED BY JOSEPH ILIYAS AND DEIVID</p>
-</footer>
 </html>

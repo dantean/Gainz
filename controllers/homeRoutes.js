@@ -93,8 +93,15 @@ router.get("/page1",async(req,res)=>{
 
 // Route for search results
 router.get('/results', async (req, res) => {
-    const searchQuery = req.query.search; 
-    res.render('results', { searchQuery, logged_in: req.session.logged_in });
+    const searchQuery = req.query.search;
+    try {
+        const apiResponse = await fetch(`http://localhost:3001/api/your_endpoint?search=${searchQuery}`);
+        const data = await apiResponse.json();
+        res.render('results', { data, logged_in: req.session.logged_in });
+    } catch (error) {
+        console.error('Fetching data failed:', error);
+        res.status(500).render('error', { error });
+    }
 });
 
 
