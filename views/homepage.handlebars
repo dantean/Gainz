@@ -1,19 +1,19 @@
-{{#each posts as |post| }}
-<div class="row mb-4 post">
-    <div class="col-md-5">
-        <h2>
-            <a href="/post/{{post.id}}">{{Post.title}}</a>
-        </h2>
-        <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
-    </div>
-    <div clas="col-md-7">
-        <p>
-            {{post.contents}}
-        </p>
-        <p>
-            <a href="/api/workouts/biceps">BICEPS!</a>
-        </p>
-    </div>
-</div>
-{{/each}}
+<body>
+  <section class="section">
+    <div class="container">
+      <!-- Box for title -->
+      <div class="box">
+        <h1 class="title">WORKOUT FINDER</h1>
+      </div>
 
+      <!-- Flexbox Container for Links -->
+      <div style="display: flex; flex-direction: column; align-items: stretch;">
+        <a href="#" class="button is-fullwidth is-info is-light mb-2">Workout Link 1</a>
+        <a href="#" class="button is-fullwidth is-info is-light mb-2">Workout Link 2</a>
+        <a href="#" class="button is-fullwidth is-info is-light mb-2">Workout Link 3</a>
+        <a href="#" class="button is-fullwidth is-info is-light mb-2">Workout Link 4</a>
+        <a href="#" class="button is-fullwidth is-info is-light mb-2">Workout Link 5</a>
+      </div>
+    </div>
+  </section>
+</body>
