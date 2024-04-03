@@ -2,13 +2,20 @@ body {
     background-image: url('/assets/bg.png');
     background-repeat: x;
     background-repeat: y; 
-    background-size: 100%;
+    background-size: 50%;
     height: 100vh;
     margin: 0;
   }
   
 
 main {
-
-  background-color: red;
+  background-color: transparent;
   }
+
+
+.footer {
+  background-color: transparent;
+
+  
+}
+
