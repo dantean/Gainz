@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const axios = require('axios');
 require('dotenv').config()
+
 //http://localhost:3001/api/workouts/
 
 router.get("/:type", async (req, res)=>{
