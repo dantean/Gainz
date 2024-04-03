@@ -1,3 +1,5 @@
+// This code determines 
+
 document.addEventListener('DOMContentLoaded', function() {
 // Extract the search query from the URL
     const urlParams = new URLSearchParams(window.location.search);
