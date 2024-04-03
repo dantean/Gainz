@@ -63,3 +63,4 @@ function workoutSearch(search) {
             resultsContainer.innerHTML = '<p class="title is-4">Error loading results.</p>';
         });
 }
+<script src="/js/results.js"></script>
