@@ -7,9 +7,6 @@ const homeRoutes = require('./homeRoutes');
 //http://localhost:3001/
 router.use('/', homeRoutes);
 
-
-
-
 //api routes - CRUD
 
 router.use('/api', apiRoutes);

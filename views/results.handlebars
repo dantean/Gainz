@@ -1,0 +1,11 @@
+<div id="resultsContainer"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const resultsData = localStorage.getItem('workoutSearchResults');
+        if (resultsData) {
+            const workouts = JSON.parse(resultsData);
+            console.log(workouts);
+        }
+    });
+</script>
+</div>

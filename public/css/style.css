@@ -1,7 +1,22 @@
 body {
-    background-image: url('/assets/bg.jpg');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-image: url('/assets/bg.png');
+    background-repeat: x;
+    background-repeat: y; 
+    background-size: 50%;
+    height: 100vh;
+    margin: 0;
   }
   
+
+main {
+  background-color: transparent;
+  }
+
+
+.footer {
+  background-color: transparent;
+  text-align: center;
+
+  
+}
+
