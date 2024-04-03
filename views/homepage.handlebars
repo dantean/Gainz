@@ -6,10 +6,20 @@
         </h2>
         <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
     </div>
-    <div clas="col-md-7">
+    <div class="col-md-7">
         <p>
             {{post.contents}}
         </p>
+
     </div>
 </div>
 {{/each}}
+
+<p>
+    <input id="search-input">
+    <button id="search-btn">Search</button>
+</p>
+<p id="result">
+
+</p>
+<script src="/js/search.js"></script>
