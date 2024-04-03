@@ -91,4 +91,14 @@ router.get("/page1",async(req,res)=>{
     res.render("page1")
 })
 
+// Route for search results
+router.get('/results', async (req, res) => {
+    const searchQuery = req.query.search; 
+    res.render('results', { searchQuery, logged_in: req.session.logged_in });
+});
+
+
 module.exports = router;
+
+
+

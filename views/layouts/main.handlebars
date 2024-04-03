@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Finder</title>
+    <title>Get those gains!</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -11,7 +11,7 @@
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
         <h1>
-            <a href="/">Workout Finder</a>
+            <a href="/">Gainz!</a>
         </h1>
         <nav>
             {{#if logged_in}}
@@ -25,13 +25,23 @@
         <main class="container comtainer-fluid mt-5">
             {{{body}}}
         </main>
-        <footer>
-<p>CREATED BY JOSEPH ILIYAS AND DEIVID</p>
-        </footer>
+
     </div>
     
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+
+    <script>
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        document.getElementById('search-btn').click();
+    }
+});
+</script>
 </body>
+<footer>
+<p>CREATED BY JOSEPH ILIYAS AND DEIVID</p>
+</footer>
 </html>
