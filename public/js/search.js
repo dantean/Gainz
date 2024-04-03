@@ -1,25 +1,28 @@
 var searchBtnEl = document.getElementById('search-btn');
 var searchInput = document.getElementById('search-input');
 
-function search() {
-    var searchTerm = searchInput.value;
-    window.location.href = `/results?search=${encodeURIComponent(searchTerm)}`;
+async function workoutSearch(searchTerm) {
+    const encodedSearchTerm = encodeURIComponent(searchTerm);
+
+try {
+    const response = await fetch('/api/workouts/${encodedSearchTerm}');
+    if (!response.ok) {
+        throw new Error('Search Failed');
+    }
+    const data = await response.json();
+    localStorage.setItem('workoutSearchResults', JSON.stringify(data));
+    window.location.href = '/results';
+} catch (error) {
+    console.error('Error during search:', error);
+}
 }
 
-// v-- enables the Enter button to submit the search results instead of having to press a mouse button --v
-
-function search() {
-    var searchTerm = searchInput.value
-    workoutSearch(searchTerm)
+function initiateSearch(event) {
+    event.preventDefault();
+    var searchTerm = searchInput.ariaValueMax.trim();
+    if (searchTerm) {
+        workoutSearch(searchTerm);
+    }
 }
 
-searchBtnEl.addEventListener("click", search)
-
-// Unified search function
-function search() {
-    var searchTerm = searchInput.value;
-    window.location.href = `/results?search=${encodeURIComponent(searchTerm)}`;
-}
-
-// Attach the event listener correctly
-searchBtnEl.addEventListener('click', search);
+searchBtnEl.addEventListener('click', initiateSearch);
