@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
+require('dotenv').config();
 
 
 //http://localhost:3001/
@@ -25,10 +27,6 @@ router.get('/', async (req, res) => {
     //     res.status(500).json(err);
     // }
 });
-
-
-
-
 
 
 //http://localhost:3001/Post/5
@@ -88,22 +86,22 @@ res.render('login');
 
 //http://localhost:3001/page1
 router.get("/page1",async(req,res)=>{
-    res.render("page1")
-})
+    res.render("page1");
+});
 
 // Route for search results
 router.get('/results', async (req, res) => {
     const searchQuery = req.query.search;
     try {
-        const apiResponse = await fetch(`http://localhost:3001/api/your_endpoint?search=${searchQuery}`);
-        const data = await apiResponse.json();
-        res.render('results', { data, logged_in: req.session.logged_in });
+        const response = await axios.get(`${process.env.WORKOUT_URL}`, {
+            params: { Muscles: searchQuery },
+        });
+        res.render('results', { workouts: response.data, logged_in: req.session.logged_in });
     } catch (error) {
         console.error('Fetching data failed:', error);
         res.status(500).render('error', { error });
     }
 });
-
 
 module.exports = router;
 
