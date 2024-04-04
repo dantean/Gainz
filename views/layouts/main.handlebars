@@ -5,16 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get those gainz!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/css/style.css">
+    
 </head>
 <body>
     <section class="hero is-primary" style="background-color: transparent;">
         <div class="hero-body">
-            <div class="container has-text-centered">
+            <div class="container is-fluid">
                 <h1 class="title">
                     <a href="/"><img src="/assets/logo.png" alt="Gainz!"></a>
                 </h1>
             </div>
+        </div>
+    </section>
+       <section class="section">
+        <div class="container">
+            <nav class="level">
+                <div class="level-item">
+                    {{#if logged_in}}
+                    <a href="/profile" class="button is-primary">profile</a>
+                    <button class="button is-light" id="logout">logout</button>
+                    {{else}}
+                    <a href="/login" class="button is-primary">login</a>
+                    {{/if}}
+                </div>
+            </nav>
         </div>
     </section>
 <section class="search-section">
@@ -38,20 +54,6 @@
         </div>
         <script src="/js/search.js"></script>
     </section>
-    <section class="section">
-        <div class="container">
-            <nav class="level">
-                <div class="level-item">
-                    {{#if logged_in}}
-                    <a href="/profile" class="button is-primary">profile</a>
-                    <button class="button is-light" id="logout">logout</button>
-                    {{else}}
-                    <a href="/login" class="button is-primary">login</a>
-                    {{/if}}
-                </div>
-            </nav>
-        </div>
-    </section>
 
     <main class="container mt-5">
         {{{body}}}
@@ -62,8 +64,8 @@
     {{/if}}
     
     <footer class="footer">
-                <p>©2024 Deivid V, Iliyaas M, Joseph M</p>
-                <p><a href="https://github.com/jdmonticelli/Project2">Github Repo</a></p>  
+                <p>©2024 Deivid H, Iliyaas M, Joseph M</p>
+                <p><a href="https://github.com/jdmonticelli/Gainz">Github Repo</a></p>  
     </footer>
 </body>
 </html>

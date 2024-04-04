@@ -51,3 +51,25 @@ document
     document
         .querySelector('.signup-form')
         .addEventListener('submit', signupFormHandler);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginTab = document.getElementById('login-tab');
+            const signupTab = document.getElementById('signup-tab');
+            const loginPanel = document.getElementById('login-panel');
+            const signupPanel = document.getElementById('signup-panel');
+          
+            loginTab.addEventListener('click', () => {
+              loginPanel.style.display = 'block';
+              signupPanel.style.display = 'none';
+              loginTab.classList.add('is-active');
+              signupTab.classList.remove('is-active');
+            });
+          
+            signupTab.addEventListener('click', () => {
+              signupPanel.style.display = 'block';
+              loginPanel.style.display = 'none';
+              signupTab.classList.add('is-active');
+              loginTab.classList.remove('is-active');
+            });
+          });
+          
