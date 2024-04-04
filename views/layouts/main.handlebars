@@ -41,21 +41,24 @@
                 <a href="/profile" class="button is-primary">profile</a>
                 <button class="button is-light" id="logout">logout</button>
                 {{else}}
-                <a href="/login" class="button is-primary">login</a>
+                <a href="/login" class="button is-primary">My Account</a>
                 {{/if}}
             </div>
         </div>
     </div>
 </section>
 
-
+<section>
     <main class="container mt-5">
         {{{body}}}
     </main>
+</section>
 
+<section>
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+</section>
     
     <footer class="footer">
         <p>©2024 Deivid H, Iliyaas M, Joseph M</p>
