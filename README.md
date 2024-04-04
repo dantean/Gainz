@@ -43,7 +43,7 @@ MIT License - The License file is provided here : (./LICENSE)
 
 ## Deployed Page and GitHub Repository
 
-Deployed Webpage : 
+Deployed Webpage : https://project2-miafsl-3909a2495322.herokuapp.com/
 
 Github Repository: https://github.com/jdmonticelli/Gainz
 
@@ -52,7 +52,7 @@ Github Repository: https://github.com/jdmonticelli/Gainz
 
 Deivid H. worked on ReadMe, presentation and bug fixing.
 
-Joseph M. worked on layout and structuring of the website.
+Joseph M. worked on layout and structuring of the website. Also Worked on javascript and helped with bug fixes with the Api and Sql authentication.
 
 Iliyaas M. worked on api and getting it implemented on the website.
 
