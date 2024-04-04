@@ -1,9 +1,14 @@
-// Import just the router express
 const router = require('express').Router();
-// Import the index.js from 'api' folder
 const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
 
-// When a request is made to the /api route, it will be directed to the index.js in the 'api' folder.
+//html routes -is all views - all handlebars
+
+//http://localhost:3001/
+router.use('/', homeRoutes);
+
+//api routes - CRUD
+
 router.use('/api', apiRoutes);
 
 module.exports = router;
