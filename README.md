@@ -52,7 +52,7 @@ Github Repository: https://github.com/jdmonticelli/Gainz
 
 Deivid H. worked on ReadMe, presentation and bug fixing.
 
-Joseph M. worked on layout and structuring of the website.
+Joseph M. worked on layout and structuring of the website. Also Worked on javascript and helped with bug fixes with the Api and Sql authentication.
 
 Iliyaas M. worked on api and getting it implemented on the website.
 
