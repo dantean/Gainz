@@ -73,3 +73,24 @@ document
             });
           });
           
+          document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tabs li');
+            const tabContentBoxes = document.querySelectorAll('.tab-content');
+        
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+        
+                    const target = tab.getAttribute('data-tab');
+                    tabContentBoxes.forEach(box => {
+                        if (box.getAttribute('id') === target) {
+                            box.classList.add('is-active');
+                        } else {
+                            box.classList.remove('is-active');
+                        }
+                    });
+                });
+            });
+        });
+        
