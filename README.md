@@ -39,21 +39,20 @@ Gainz is a fullstack website that revolves around finding workouts. There are ma
 MIT License - The License file is provided here : (./LICENSE)
 
 ## Screenshot
-
-
+![screenshot](public/assets/screenshot.png)
 
 ## Deployed Page and GitHub Repository
 
-Deployed Webpage : 
+Deployed Webpage : https://project2-miafsl-3909a2495322.herokuapp.com/
 
-Github Repository: 
+Github Repository: https://github.com/jdmonticelli/Gainz
 
 
 ## Credit Where Credit Is Due
 
-Deivid H. 
+Deivid H. worked on ReadMe, presentation and bug fixing.
 
-Joseph M. worked on layout and structuring of the website.
+Joseph M. worked on layout and structuring of the website. Also Worked on javascript and helped with bug fixes with the Api and Sql authentication.
 
 Iliyaas M. worked on api and getting it implemented on the website.
 
