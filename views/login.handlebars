@@ -1,39 +1,66 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div class="container">
+    <div class="panel has-background-link">
+        <p class="panel-heading has-background-info has-text-centered style="font-size: 1.5rem; font-weight: bold;">
+            Track your GAINZ!
+        </p>
+        <div class="tabs is-boxed is-fullwidth">
+            <ul>
+                <li class="is-active" data-tab="loginTab"><a>Login</a></li>
+                <li data-tab="signupTab"><a>Signup</a></li>
+            </ul>
+        </div>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">username:</label>
-        <input class="form-input" type="text" id="username-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+        <!-- Login Form Panel Block -->
+        <div id="loginTab" class="panel-block tab-content is-active">
+            <div class="content">
+                <!-- Login form -->
+                <form class="login-form">
+                    <div class="field">
+                        <label class="label" for="email-login">Username:</label>
+                        <div class="control has-icons-centered">
+                            <input class="input is-rounded" type="text" id="username-login" placeholder="Your Username">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="password-login">Password:</label>
+                        <div class="control has-icons-centered">
+                            <input class="input is-rounded" type="password" id="password-login" placeholder="Your Password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-primary is-rounded" type="submit">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-       
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+        <!-- Signup Form Panel Block -->
+        <div id="signupTab" class="panel-block tab-content">
+            <div class="content">
+                <!-- Signup form -->
+                <form class="signup-form">
+                    <div class="field">
+                        <label class="label" for="name-signup">Username:</label>
+                        <div class="control has-icons-centered">
+                            <input class="input is-rounded" type="text" id="username-signup" placeholder="Choose a Username">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="password-signup">Password:</label>
+                        <div class="control has-icons-centered">
+                            <input class="input is-rounded" type="password" id="password-signup" placeholder="Create a Password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-primary is-rounded" type="submit">Signup</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-
 <script src="./js/login.js"></script>
