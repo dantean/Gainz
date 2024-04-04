@@ -43,7 +43,7 @@ MIT License - The License file is provided here : (./LICENSE)
 
 ## Deployed Page and GitHub Repository
 
-Deployed Webpage : 
+Deployed Webpage : https://project2-miafsl-3909a2495322.herokuapp.com/
 
 Github Repository: https://github.com/jdmonticelli/Gainz
 
