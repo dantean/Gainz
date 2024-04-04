@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 
 //http://localhost:3001/
@@ -25,10 +26,6 @@ try {
         res.status(500).json(err);
     }
 });
-
-
-
-
 
 
 //http://localhost:3001/Post/5
@@ -90,5 +87,13 @@ res.render('login');
 router.get("/page1",async(req,res)=>{
     res.render("page1")
 })
+
+
+//http://localhost:3001/results
+router.get('/results', (req, res) => {
+    res.render('results');
+});
+
+
 
 module.exports = router;
