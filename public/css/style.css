@@ -1,22 +1,32 @@
-body {
+html, body {
     background-image: url('/assets/bg.png');
-    background-repeat: x;
-    background-repeat: y; 
-    background-size: 50%;
-    height: 100vh;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    height: 100%;
     margin: 0;
   }
-  
 
-main {
-  background-color: transparent;
-  }
-
+body {
+  min-height: 100vh;
+}
 
 .footer {
   background-color: transparent;
-  text-align: center;
-
-  
+  text-align: center;  
 }
 
+.title {
+  text-align: center;
+}
+
+.tab-content {
+  display: none; /* Hide all tab content by default */
+}
+
+.tab-content.is-active {
+  display: block; /* Only show the tab content that is active */
+}
+
+.panel-heading {
+color: white;
+}

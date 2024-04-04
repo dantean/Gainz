@@ -1,64 +1,87 @@
-var searchBtnEl = document.getElementById("search-btn")
-var searchInput = document.getElementById("search-input")
-var result = document.getElementById("result")
+var searchBtnEl = document.getElementById("search-btn");
+var searchInput = document.getElementById("search-input");
+var results = document.getElementById("results"); // Ensure this ID matches your HTML element
 
 function workoutSearch(search) {
-    var url = `/api/workouts/${search}`
+    var url = `/api/workouts/${search}`;
 
     fetch(url)
-    .then(function (response){
-        return response.json()
+    .then(function (response) {
+        return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        result.textContent=""
+        console.log(data);
+        results.innerHTML = ""; // Use innerHTML to reset the content
 
-        for (var i=0; i < data.length; i = i +14) {
-            var workoutCardsEl = data
-            console.log(workoutCardsEl[i])
-            var divCol = document.createElement("div")
-            divCol.classList = "col-sm-2 mb-3 mb-sm-0"
+        // Check if data is not empty
+        if (data && data.length > 0) {
+            // Create and append the table and its elements
+            var table = document.createElement("table");
+            table.className = "table is-striped is-fullwidth"; // Add Bulma classes for styling
 
-            var divBody = document.createElement("div")
-            divBody.classList = "card-body"
+            // Create table header
+            var thead = document.createElement("thead");
+            var headerRow = document.createElement("tr");
+            var headers = ["Exercise name", "Muscle worked", "Equipment needed", "Explanation", "Tutorial link"];
+            headers.forEach(text => {
+                var header = document.createElement("th");
+                header.textContent = text;
+                headerRow.appendChild(header);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
 
-            var h5 = document.createElement("h5")
-            h5.classList = "card-title"
-            h5.textContent = "Exercise name: " + data[i].WorkOut
-            divBody.appendChild(h5)
-            result.appendChild(divBody)
+            // Create table body
+            var tbody = document.createElement("tbody");
+            data.forEach(item => {
+                var row = document.createElement("tr");
 
-            var pMuscles = document.createElement("p")
-            pMuscles.classList = "card-text"
-            pMuscles.textContent = "Muscle worked: " + data[i].Muscles
-            divBody.appendChild(pMuscles)
-            result.appendChild(divBody)
+                var workoutCell = document.createElement("td");
+                workoutCell.textContent = item.WorkOut;
+                row.appendChild(workoutCell);
 
-            var pEquipment = document.createElement("p")
-            pEquipment.classList = "card-text"
-            pEquipment.textContent = "Equipment needed: " + data[i].Equipment
-            divBody.appendChild(pEquipment)
-            result.appendChild(divBody)
+                var muscleCell = document.createElement("td");
+                muscleCell.textContent = item.Muscles;
+                row.appendChild(muscleCell);
 
-            var pExplaination = document.createElement("p")
-            pExplaination.classList = "card-text"
-            pExplaination.textContent = "Explanation: " + data[i].Explaination
-            divBody.appendChild(pExplaination)
-            result.appendChild(divBody)
+                var equipmentCell = document.createElement("td");
+                equipmentCell.textContent = item.Equipment;
+                row.appendChild(equipmentCell);
 
-            var pVideo = document.createElement("p")
-            pVideo.classList = "card-text"
-            pVideo.textContent = "Link to Youtube tutorial: " + data[i].Video
-            divBody.appendChild(pVideo)
-            result.appendChild(divBody)
+                var explanationCell = document.createElement("td");
+                explanationCell.textContent = item.Explanation;
+                row.appendChild(explanationCell);
 
+                var tutorialCell = document.createElement("td");
+                var tutorialLink = document.createElement("a");
+                tutorialLink.href = item.Video;
+                tutorialLink.textContent = "View Tutorial";
+                tutorialLink.target = "_blank";
+                tutorialCell.appendChild(tutorialLink);
+                row.appendChild(tutorialCell);
+
+                tbody.appendChild(row);
+            });
+            table.appendChild(tbody);
+
+            // Append the complete table to the results container
+            results.appendChild(table);
+        } else {
+            // Show a message if no results found
+            results.innerHTML = '<p class="title is-4">No results found. Please try another search.</p>';
         }
     })
+    .catch(function (error) {
+        console.error('Error fetching data: ', error);
+        results.innerHTML = '<p class="title is-4">Error loading results.</p>';
+    });
 }
 
 function search() {
-    var searchTerm = searchInput.value
-    workoutSearch(searchTerm)
+    var searchTerm = searchInput.value.trim();
+    if (searchTerm) {
+        workoutSearch(searchTerm);
+    }
 }
 
-searchBtnEl.addEventListener("click", search)
+searchBtnEl.addEventListener("click", search);

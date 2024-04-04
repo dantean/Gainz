@@ -51,3 +51,46 @@ document
     document
         .querySelector('.signup-form')
         .addEventListener('submit', signupFormHandler);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginTab = document.getElementById('login-tab');
+            const signupTab = document.getElementById('signup-tab');
+            const loginPanel = document.getElementById('login-panel');
+            const signupPanel = document.getElementById('signup-panel');
+          
+            loginTab.addEventListener('click', () => {
+              loginPanel.style.display = 'block';
+              signupPanel.style.display = 'none';
+              loginTab.classList.add('is-active');
+              signupTab.classList.remove('is-active');
+            });
+          
+            signupTab.addEventListener('click', () => {
+              signupPanel.style.display = 'block';
+              loginPanel.style.display = 'none';
+              signupTab.classList.add('is-active');
+              loginTab.classList.remove('is-active');
+            });
+          });
+          
+          document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tabs li');
+            const tabContentBoxes = document.querySelectorAll('.tab-content');
+        
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+        
+                    const target = tab.getAttribute('data-tab');
+                    tabContentBoxes.forEach(box => {
+                        if (box.getAttribute('id') === target) {
+                            box.classList.add('is-active');
+                        } else {
+                            box.classList.remove('is-active');
+                        }
+                    });
+                });
+            });
+        });
+        
