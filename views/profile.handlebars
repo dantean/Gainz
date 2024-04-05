@@ -1,6 +1,31 @@
 <div class="box">
-<p class="is-size-1 has-text-centered has-text-weight-bold">Welcome, {{username}}!</p>
-&nbsp;
-<p class="is-family-monospace">COMING SOON: Favorite Workouts and Calendar (check back real soon!!!! :D</p>
-  </div>
+  <p class="is-size-1 has-text-centered has-text-weight-bold">Welcome, {{username}}!</p>
+  &nbsp;
+
+
+
+  <table class="table is-striped is-fullwidth">
+    <thead>
+      <tr>
+        <th>Exercise name</th>
+        <th>Muscle worked</th>
+        <th>Equipment needed</th>
+        <th>Explanation</th>
+        <th>Tutorial link</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each favorites as |favorite|}}
+      <tr>
+        <td>{{favorite.WorkOut}}</td>
+        <td>{{favorite.Muscles}}</td>
+        <td>{{favorite.Equipment}}</td>
+        <td></td>
+        <td><a href="{{favorite.Video}}" target="_blank">View Tutorial</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
 <script src="./js/profile.js"></script>

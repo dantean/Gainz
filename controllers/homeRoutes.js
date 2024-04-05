@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Favorite } = require('../models');
 const withAuth = require('../utils/auth');
 const axios = require('axios');
 
@@ -63,7 +63,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Post }],
+      include: [{ model: Post }, {model: Favorite }],
     });
 
     const user = userData.get({ plain: true });
