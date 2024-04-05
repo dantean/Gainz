@@ -53,8 +53,8 @@ document
         .addEventListener('submit', signupFormHandler);
 
         document.addEventListener('DOMContentLoaded', () => {
-            const loginTab = document.getElementById('login-tab');
-            const signupTab = document.getElementById('signup-tab');
+            const loginTab = document.getElementById('loginTab');
+            const signupTab = document.getElementById('signupTab');
             const loginPanel = document.getElementById('login-panel');
             const signupPanel = document.getElementById('signup-panel');
           
